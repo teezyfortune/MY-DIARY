@@ -1,0 +1,25 @@
+.background{
+	background-image: url('./images/landing@.jpg');
+max-width: 100%;
+padding-left:50% ;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+height: 500px;
+justify-content: center;
+} 
+
+.body-text{
+	color: white;
+	margin-bottom: 4rem;
+	justify-content: center;
+	top: 10%;
+	right: 50%;
+}
+
+
+.center-text{
+	display: flex;
+	justify-content: center;
+	
+}
