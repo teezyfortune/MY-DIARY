@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import uuid from 'uuid/v4';
 
 export default class ContactForm extends Component {
 	constructor(props) {
@@ -19,7 +20,7 @@ export default class ContactForm extends Component {
 
 	handleSubmit(evt) {
 		evt.preventDefault();
-		this.props.create(this.state)
+		this.props.create({ ...this.state, id: uuid() })
 		this.setState({
 			email: "",
 			message: ""
@@ -29,7 +30,7 @@ export default class ContactForm extends Component {
 		return (
 			<div className="container justify-content-center" > 
 				<div className="row-col-md">
-				<h3 className="display-4 text-center"> Conatct Me</h3>
+				<h3 className="display-4 text-center"> Contact Me</h3>
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group ">
 						<label for="email">Email</label>
@@ -38,7 +39,6 @@ export default class ContactForm extends Component {
 							name="email"
 								value={this.state.email}
 								onChange = {this.handleChange}
-
 						/>
 					</div>
 				<div class="form-group">
@@ -53,8 +53,8 @@ export default class ContactForm extends Component {
 							</textarea>
 							</div>
 						<button  className="btn btn-success">Send Message</button>
-</form>
-</div>
+					</form>
+				</div>
 			</div>
 		)
 	}

@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import {Link, NavLink} from "react-router-dom"
+import { Link, NavLink } from "react-router-dom";
+import uuid from 'uuid/v4';
+
 export default class NavBar extends Component {
 	render() {
 	
 		const navAddress = this.props.profile.map((link) => <li className="nav-item display-inline" key={link.name}>
 			<NavLink exact to={`/portfolio/${link.name}`} className="nav-link" key={link.name}>{link.name}</NavLink>
+			{console.log('>>>>>key', link.name)}
 		</li>
 		)
-		console.log('>>>>>>addree', navAddress)
-
 		return (
 			<nav className="navbar navbar-expand-lg navbar-dark bg-dark position-relative">
 				<Link className="navbar-brand" to="/portfolio">
@@ -27,7 +28,7 @@ export default class NavBar extends Component {
 				<div className="collapse navbar-collapse" id="navbarNav">
 				<ul className="navbar-nav">
 					<li className="nav-item">
-							<NavLink exact to="/portfolio" className="nav-link">Home</NavLink>
+							<NavLink exact to="/portfolio" className="nav-link" key={uuid()}>Home</NavLink>
 						</li>
 						{navAddress}
 					</ul>

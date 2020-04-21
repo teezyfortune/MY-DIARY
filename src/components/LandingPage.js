@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './LandingPage.css';
+import uuid from 'uuid/v4';
 
 export default class LandingPage extends Component {
 	render() {
@@ -7,11 +8,10 @@ export default class LandingPage extends Component {
 		return (
 			<div className="container background ">
 				<div className="row  justify-content-center">
-					{message.map(msg =>
-					<div className="row md-5 justify-content-center">	<h3 className="display-4  text-center ">{msg.fact}</h3></div>
-					)}
 				</div>
-				
+				{message.map(msg =>
+					<div className="center-text " key={uuid()}>	<h3 className=" ">{msg.fact}</h3></div>
+					)}
 			</div>
 	
 			

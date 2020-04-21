@@ -1,3 +1,10 @@
 .center-conter{
 	margin: 4rem;
 }
+
+
+label{
+	color:white;
+	font-family: "comic sans ms";
+	font-weight: 50;
+}

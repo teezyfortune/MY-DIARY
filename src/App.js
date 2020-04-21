@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Switch, Router } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import LandingPage from './components/LandingPage';
 import About from './components/pages/About';
 import Contact from './components/actions/Contact';
 import PortFolio from './components/pages/PortFolio';
 import myimage from '../src/components/images/myimage.jpg';
+import Home from './components/Home';
 
 export default class App extends Component {
   static defaultProps = {
@@ -40,12 +41,11 @@ export default class App extends Component {
     let info = this.props.portfolio.map(folio => folio)
     const data = info.map(names => names)
       // console.log('>>>>>>>linkup', resm.find(name => name.name === 'Contact Us'))
-    const content = this.props.portfolio.map(cont => cont)
+    const content = this.props.portfolio.map( cont => cont)
 
     const getInfo = props => {
       let name = props.match.params.name
       let getCurrentName = data.find(res => res.name === name)
-    console.log('>>>>>>>resultNew', getCurrentName)
 
       if (name === 'About') {
         return <About {...props} about={getCurrentName} />
@@ -66,7 +66,7 @@ export default class App extends Component {
         <Navbar profile={info} />
         <LandingPage message={content} />
             <Switch>
-              <Router exact path="/portfolio" render/>
+              <Route exact path="/portfolio" render={() => <Home info={info}/> }/>
               <Route exact path="/portfolio/:name" render={getInfo} />
         </Switch>
      

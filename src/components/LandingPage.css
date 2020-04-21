@@ -1,25 +1,40 @@
 .background{
 	background-image: url('./images/landing@.jpg');
 max-width: 100%;
-padding-left:50% ;
+/* padding-left:50% ; */
 background-repeat: no-repeat;
 background-size: cover;
 position: relative;
 height: 500px;
+border-bottom: solid white 3px;
 justify-content: center;
 } 
 
-.body-text{
-	color: white;
-	margin-bottom: 4rem;
-	justify-content: center;
-	top: 10%;
-	right: 50%;
+.background h3{
+	margin: 4rem;
+text-align: center;	
+font-family: "comic sans ms";
+text-shadow: black;
+font-weight: 20px;
+font-size: 30px;
+}  
+
+.background::before {
+	background-color: red;
+	content: "";
+	z-index: -1;
+	position:absolute ;
+	display: block;
 }
 
-
-.center-text{
+.background .center-text{
+	color: white;
 	display: flex;
 	justify-content: center;
-	
+}
+
+h3{
+	color: white;
+	font-family: "comic sans ms";
+
 }
